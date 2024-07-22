@@ -17,6 +17,8 @@ public class ShopApp {
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
 
+        Clothing[] items = {item1, item2, new Clothing(), new Clothing()};
+
         item1.description = "Blue Jacket";
         item1.price = 20.9;
         item1.size = "M";
@@ -25,31 +27,48 @@ public class ShopApp {
         item2.price = 10.5;
         item2.size = "S";
 
+        items[2].description = "Green Scarf";
+        items[2].price = 5.0;
+        items[2].size = "S";
 
-        System.out.println("Item 1" + "," + item1.description + "," + item1.size + "," + item1.price);
-        System.out.println("Item 2" + "," + item2.description + "," + item2.size + "," + item2.price);
+        items[3].description = "Blue T-Shirt";
+        items[3].price = 10.5;
+        items[3].size = "S";
 
-        total = (item1.price + (item2.price * 2));
-        total += (total * tax);
+        // System.out.println("Item 1" + "," + item1.description + "," + item1.size + "," + item1.price);
+        // System.out.println("Item 2" + "," + item2.description + "," + item2.size + "," + item2.price);
 
-        System.out.println("Total: " + total);
+        // total = (item1.price + (item2.price * 2));
+        // total += (total * tax);
 
         int measurement = 3;
 
         switch (measurement) {
-            case 1,2,3:
+            case 1: case 2: case 3:
                 c1.size = "S";
                 break;
-            case 4,5,6:
+            case 4: case 5: case 6:
                 c1.size = "M";
                 break;
-            case 7,8,9:
+            case 7: case 8: case 9:
                 c1.size = "L";
                 break;
             default:
                 c1.size = "X";
                 break;
         }
+        
+        for (Clothing item : items) {
+            if (c1.size.equals(item.size)) {
+                total += item.price + (item.price * tax);
+                System.out.println(item.description + ", " + item.size + ", " + item.price);
+                if (total > 15) {
+                    break;
+                }
+            }
+        }
+
+        System.out.println("Total: " + total);
 
     }
 }
