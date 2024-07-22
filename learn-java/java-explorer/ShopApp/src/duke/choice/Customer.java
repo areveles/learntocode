@@ -1,6 +1,7 @@
 package duke.choice;
 
 public class Customer {
-    String name;
+    String name, size;
+    
     
 }
