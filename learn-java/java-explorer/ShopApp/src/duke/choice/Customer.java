@@ -8,7 +8,7 @@ public class Customer {
 
     }
 
-    public Customer (String name, int measurement) {
+    public Customer(String name, int measurement) {
         this.name = name;
         setSize(measurement);
     }
@@ -16,9 +16,11 @@ public class Customer {
     public void addItems(Clothing[] someItems) {
         items = someItems;
     }
+
     public Clothing[] getItems() {
         return items;
     }
+
     public double getTotalClothingCost() {
         double total = 0.0;
         for (Clothing clothing : items) {
@@ -30,6 +32,7 @@ public class Customer {
     public String getName() {
         return name;
     }
+
     public String getSize() {
         return size;
     }
@@ -37,21 +40,22 @@ public class Customer {
     public void setSize(String size) {
         this.size = size;
     }
+
     public void setSize(int measurement) {
 
         switch (measurement) {
-            case 1: 
-            case 2: 
+            case 1:
+            case 2:
             case 3:
                 setSize("S");
                 break;
-            case 4: 
-            case 5: 
+            case 4:
+            case 5:
             case 6:
                 setSize("M");
                 break;
-            case 7: 
-            case 8: 
+            case 7:
+            case 8:
             case 9:
                 setSize("L");
                 break;
@@ -60,8 +64,9 @@ public class Customer {
                 break;
         }
     }
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
 }
