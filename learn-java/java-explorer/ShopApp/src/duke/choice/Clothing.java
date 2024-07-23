@@ -6,6 +6,14 @@ public class Clothing {
     String description = "", size = "M";
     double price = 0.0;
 
+    public Clothing() {
+    }
+
+    public Clothing(String description, double price, String size) {
+        this.description = description;
+        this.price = price;
+        this.size = size;
+    }
     public double getPrice() {
         return price + (price * MIN_TAX);
     }
